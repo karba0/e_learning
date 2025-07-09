@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload File</title>
+  <style>
+    body {
+      font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(24,90,157,0.18);
+      padding: 30px 28px 28px 28px;
+    }
+    h2 {
+      text-align: center;
+      color: #185a9d;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 30px;
+      font-family: 'Nunito', Arial, sans-serif;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: #333;
+    }
+    input[type="file"], input[type="text"], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    input[type="file"] {
+      padding: 8px;
+    }
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    input[type="text"]:focus, textarea:focus, select:focus, input[type="file"]:focus {
+      outline: none;
+      border-color: #43cea2;
+    }
+    input[type="submit"] {
+      background: #43cea2;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    input[type="submit"]:hover {
+      background: #3bb890;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Upload a File</h2>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="myfile">Select File:</label>
+        <input type="file" name="myfile" id="myfile" required>
+      </div>
+      <div class="form-group">
+        <label for="course_id">Course:</label>
+        <select name="course_id" id="course_id" required>
+          <option value="1">Computer Network For Dummies</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" placeholder="Enter a description for this file (optional)"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="submit" name="submit" value="Upload File">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
